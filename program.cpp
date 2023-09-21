@@ -16,15 +16,15 @@ typedef struct  {       //sebagai definisi program
 int main()
 {
     mahasiswa mhs[MAX];    // Deklarasi array mhs
-    int x = 0;          // mementukan variable x
+    int JumlahMahasiswa = 0;          // mementukan variable JumlahMahasiswa
     int input;
 
-    if (x < MAX) {      // untuk cek apakah x kurang dari MAX
-    mhs[x].nama = "Subkhan Mas Udi";    // Mengisi data ke struct    
-    mhs[x].nrp = "5027221044";
-    mhs[x].umur = 20;
-    mhs[x].jeniskelamin = 1;  
-    x++;                        // Menambahkan nilai x
+    if (JumlahMahasiswa < MAX) {      // untuk cek apakah JumlahMahasiswa kurang dari MAX
+    mhs[JumlahMahasiswa].nama = "Subkhan Mas Udi";    // Mengisi data ke struct    
+    mhs[JumlahMahasiswa].nrp = "5027221044";
+    mhs[JumlahMahasiswa].umur = 20;
+    mhs[JumlahMahasiswa].jeniskelamin = 1;  
+    JumlahMahasiswa++;                        // Menambahkan nilai JumlahMahasiswa
 }
 
     while (true)
@@ -41,7 +41,7 @@ int main()
         if (input == 1)
         {
             cout << "\nData Mahasiswa:" << endl <<endl;
-            for (int i = 0; i < x; i++)
+            for (int i = 0; i < JumlahMahasiswa; i++)
             {
 
                 cout << "Mahasiswa " << i + 1 << ":" << endl;
@@ -55,19 +55,19 @@ int main()
         }
         else if (input == 2)
         {
-            if (x < 10)
+            if (JumlahMahasiswa < 10)
             {
                 cout << "Input student data:" << endl;
                 cout << "Name: ";
-                cin >> mhs[x].nama;
+                cin >> mhs[JumlahMahasiswa].nama;
                 cout << "ID: ";
-                cin >> mhs[x].nrp;
+                cin >> mhs[JumlahMahasiswa].nrp;
                 cout << "Age: ";
-                cin >> mhs[x].umur;
+                cin >> mhs[JumlahMahasiswa].umur;
                 cout << "Gender (0 = Cewek, 1 = Cowok): ";
-                cin >> mhs[x].jeniskelamin;
+                cin >> mhs[JumlahMahasiswa].jeniskelamin;
 
-                x++;
+                JumlahMahasiswa++;
                 cout << "Data berhasil ditambahkan." << endl << endl;
             }
             else
@@ -77,13 +77,13 @@ int main()
         }
         else if (input == 4)
         {
-            if (x > 0)
+            if (JumlahMahasiswa > 0)
             {
                 int edit;
-                cout << "Masukkan data mahasiswa yang ingin di edits (0-" << x - 1 << "): ";
+                cout << "Masukkan data mahasiswa yang ingin di edits (0-" << JumlahMahasiswa - 1 << "): ";
                 cin >> edit;
 
-                if (edit >= 0 && edit < x)
+                if (edit >= 0 && edit < JumlahMahasiswa)
                 {
                     cout << "Masukkan data baru:" << endl;
                     cout << "Nama: ";
